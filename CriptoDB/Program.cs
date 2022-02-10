@@ -74,33 +74,33 @@ namespace EFPrueba
 
                 // Creacion de contratos
                 db.Contrato.AddRange(
-                    new Contrato { ContratoId = 1, MonedaId = "Bitcoin", CarteraId = 1, Cantidad = 2 },
-                    new Contrato { ContratoId = 2, MonedaId = "Litecoin", CarteraId = 1, Cantidad = 3 },
-                    new Contrato { ContratoId = 3, MonedaId = "Polkadot", CarteraId = 1, Cantidad = 4 },
+                    new Contrato { ContratoId = 1, CarteraId = 1, MonedaId = "Bitcoin",  Cantidad = 2 },
+                    new Contrato { ContratoId = 2, CarteraId = 1, MonedaId = "Litecoin",  Cantidad = 3 },
+                    new Contrato { ContratoId = 3, CarteraId = 1, MonedaId = "Polkadot",  Cantidad = 4 },
 
-                    new Contrato { ContratoId = 4, MonedaId = "Dogecoin", CarteraId = 2, Cantidad = 3 },
-                    new Contrato { ContratoId = 5, MonedaId = "BitcShibaInuoin", CarteraId = 2, Cantidad = 4 },
-                    new Contrato { ContratoId = 6, MonedaId = "Litecoin", CarteraId = 2, Cantidad = 3 },
+                    new Contrato { ContratoId = 4, CarteraId = 2, MonedaId = "Dogecoin",  Cantidad = 3 },
+                    new Contrato { ContratoId = 5, CarteraId = 2, MonedaId = "ShibaInu",  Cantidad = 4 },
+                    new Contrato { ContratoId = 6, CarteraId = 2, MonedaId = "Litecoin",  Cantidad = 3 },
 
-                    new Contrato { ContratoId = 7, MonedaId = "Etherum", CarteraId = 3, Cantidad = 4 },
-                    new Contrato { ContratoId = 8, MonedaId = "Cardano", CarteraId = 3, Cantidad = 2 },
-                    new Contrato { ContratoId = 9, MonedaId = "Stellar", CarteraId = 3, Cantidad = 1 },
-                    new Contrato { ContratoId = 10, MonedaId = "Dogecoin", CarteraId = 3, Cantidad = 4 },
+                    new Contrato { ContratoId = 7, CarteraId = 3,  MonedaId = "Etherum",  Cantidad = 4 },
+                    new Contrato { ContratoId = 8, CarteraId = 3,  MonedaId = "Cardano",  Cantidad = 2 },
+                    new Contrato { ContratoId = 9,  CarteraId = 3, MonedaId = "Stellar", Cantidad = 1 },
+                    new Contrato { ContratoId = 10, CarteraId = 3, MonedaId = "Dogecoin",  Cantidad = 4 },
 
-                    new Contrato { ContratoId = 11, MonedaId = "Bitcoin", CarteraId = 4, Cantidad = 2 },
-                    new Contrato { ContratoId = 12, MonedaId = "ShibaInu", CarteraId = 4, Cantidad = 3 },
-                    new Contrato { ContratoId = 13, MonedaId = "Stellar", CarteraId = 4, Cantidad = 4 },
-                    new Contrato { ContratoId = 14, MonedaId = "Litecoin", CarteraId = 4, Cantidad = 3 },
+                    new Contrato { ContratoId = 11, CarteraId = 4, MonedaId = "Bitcoin",  Cantidad = 2 },
+                    new Contrato { ContratoId = 12, CarteraId = 4, MonedaId = "ShibaInu",  Cantidad = 3 },
+                    new Contrato { ContratoId = 13, CarteraId = 4, MonedaId = "Stellar",  Cantidad = 4 },
+                    new Contrato { ContratoId = 14, CarteraId = 4, MonedaId = "Litecoin",  Cantidad = 3 },
 
-                    new Contrato { ContratoId = 15, MonedaId = "Polkadot", CarteraId = 5, Cantidad = 3 },
-                    new Contrato { ContratoId = 16, MonedaId = "Cardano", CarteraId = 5, Cantidad = 1 },
+                    new Contrato { ContratoId = 15, CarteraId = 5, MonedaId = "Polkadot",  Cantidad = 3 },
+                    new Contrato { ContratoId = 16, CarteraId = 5, MonedaId = "Cardano",  Cantidad = 1 },
 
-                    new Contrato { ContratoId = 17, MonedaId = "Etherum", CarteraId = 6, Cantidad = 4 },
-                    new Contrato { ContratoId = 18, MonedaId = "Litecoin", CarteraId = 6, Cantidad = 2 },
-                    new Contrato { ContratoId = 19, MonedaId = "Polkadot", CarteraId = 6, Cantidad = 1 },
+                    new Contrato { ContratoId = 17, CarteraId = 6, MonedaId = "Etherum",  Cantidad = 4 },
+                    new Contrato { ContratoId = 18, CarteraId = 6, MonedaId = "Litecoin",  Cantidad = 2 },
+                    new Contrato { ContratoId = 19, CarteraId = 6, MonedaId = "Polkadot", Cantidad = 1 },
 
-                    new Contrato { ContratoId = 20, MonedaId = "ShibaInu", CarteraId = 7, Cantidad = 2 },
-                    new Contrato { ContratoId = 21, MonedaId = "Stellar", CarteraId = 7, Cantidad = 4 }
+                    new Contrato { ContratoId = 20, CarteraId = 7, MonedaId = "ShibaInu",  Cantidad = 2 },
+                    new Contrato { ContratoId = 21, CarteraId = 7, MonedaId = "Stellar",  Cantidad = 4 }
                     
                 );
 
@@ -108,103 +108,11 @@ namespace EFPrueba
             }
         }
 
-        static void ConsultarCriptoDB()
-        {
-            using (var db = new CryptoContext())
-            {
-                // 0 Ejemplo
-                WriteLine("0.- Ejemplo de presentación de datos anónimos");
-                var list0 = new string[] { 
-                                "Brachiosaurus",
-                                "Amargasaurus",
-                                "Mamenchisaurus" 
-                            }
-                            .Select((d,i) => new {
-                                id = i,
-                                nombre = d
-                            })
-                            .ToList();
-                list0.ForEach(Console.WriteLine);
-
-                // 1
-                WriteLine("1.- Monedas con valor actual superior a 50€ ordenadas alfabéticamente");
-                var list1 = db.Moneda.Where(a => a.Actual > 50).OrderByDescending(x => x.MonedaId).ToList();
-                list1.ForEach(Console.WriteLine);
-
-                // 1
-                WriteLine("2.- Carteras con más de 2 monedas contratadas");
-                var list2 = db.Contrato.GroupBy(c => c.CarteraId).Select(c => new{
-                CarteraId=c.Key,
-                TotalMonedas=c.Count()
-                }).Where(c => c.TotalMonedas > 2).ToList();
-                list2.ForEach(Console.WriteLine);
-
-                // 1
-                WriteLine("3.- Exchanges ordenados por números de carteras");
-                var list3 = db.Cartera.GroupBy(c => c.Exchange).Select(f => new {
-                Exchange=f.Key,
-                TotalCarteras=f.Count()
-                }).OrderByDescending(f=>f.TotalCarteras).ToList();
-                list3.ForEach(Console.WriteLine);
-                
-
-                // 2
-                WriteLine("4.- Exchanges ordenados por cantidad de monedas");
-                var list4 = db.Cartera.Select(m => new
-                {
-                    Exchange = m.Exchange,
-                    cantidadMonedas = db.Contrato.Select(m => m.Cantidad)
-                }).OrderBy(m => m.cantidadMonedas).ToList();
-                list4.ForEach(Console.WriteLine);
-
-
-                // 2
-                WriteLine("5.- Monedas en contratos ordenadas por valor total actual");
-                var list5 = db.Moneda.Select(m => new {
-                    moneda = m.MonedaId,
-                    valorActual = m.Actual
-                }).OrderBy(m => m.valorActual).ToList();
-                list5.ForEach(Console.WriteLine);
-
-                // 2
-                WriteLine("6.- Monedas en contratos ordenadas por valor actual total en todos los contratos");
-                var list6 = list5.GroupBy(x => x.moneda).Select(a => new {
-                    Moneda = a.Key,
-                    ValorTotal = a.Sum(x => x.valorActual)
-                }).OrderByDescending(e => e.ValorTotal).ToList();
-                list6.ForEach(Console.WriteLine);
-
-                // 2
-                WriteLine("7.- Idem contando en cuantos contratos aparecen y ordenado por número de contratos");
-                var list7 = db.Moneda.ToList();
-                list7.ForEach(Console.WriteLine);
-
-                // 3 
-                WriteLine("8.- Idem pero con Exchanges ordenados por valor total");
-                var list8 = db.Moneda.ToList();
-                list8.ForEach(Console.WriteLine);
-
-                // 3
-                var porcentaje = 90M;
-                WriteLine($"9.- Las Contratos y Monedas de Binance con monedas cuyo valor actual es inferior al {porcentaje}% del valor máximo"); 
-                // var list9 = db.Cartera.Where(c => c.Exchange == "Binance")
-                // .SelectMany(db.Moneda.Select(a, o) => new{
-                //     Moneda = a.MonedaId,
-                //     Contrato = a.ContratoId,
-                //     Maximo = a.Maximo,
-                //     Actual = a.Actual,
-                //     Porcentaje = Maximo *porcentaje / 100
-                // }).Where(a => a.Porcentaje < porcentaje).OrderBy(a => a.Moneda).ToList();
-                //list9.ForEach(Console.WriteLine);
-
-            }
-        }
         static void Main(string[] args)
         {
             CrearBD();
             CrearMonedasYCarteras();
             CrearContratos();
-            ConsultarCriptoDB();
         }
     }
 }
